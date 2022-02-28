@@ -9,7 +9,7 @@ const useMoneda = (label, stateInicial, opciones) => {
       <label>
         <label>{label}</label>
         <select>
-          <option value="">- Selecciona -</option>
+          <option value="">-- Selecciona --</option>
           { opciones.map(opcion => (
             <option key={opcion.codigo} value={opcion.codigo}>{opcion.nombre}</option>
           ))}
