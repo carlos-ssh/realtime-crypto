@@ -29,6 +29,7 @@ const useCriptomoneda = (label, stateInicial, opciones) => {
       <Label>{label}</Label>
       <Select
         onChange={e => actualizarState(e.target.value)}
+        value={state}
       >
         <option>-- Selecciona --</option>
         { opciones.map(opcion => (
