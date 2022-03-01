@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import axios from 'axios';
 
+import Error from '../Error';
 import useMoneda from '../hooks/useMoneda';
 import useCriptomoneda from '../hooks/useCriptomoneda';
 
@@ -53,7 +54,7 @@ const Formulario = () => {
   // Cuando el usuario hace submit
   const cotizarMoneda = e => {
     e.preventDefault();
-    
+
     // Validar que ambos campos esten llenos
     if(moneda === '' || criptoMoneda === '') {
       guardarError(true);
@@ -67,7 +68,7 @@ const Formulario = () => {
     <form
       onSubmit={cotizarMoneda}
     >
-      { error ? <p className="error">Todos los campos son obligatorios</p> : null }
+      { error ? <Error mensaje="Todos los campos son obligatorios" /> : null }
       <SelectMonedas />
       <SelectCripto />
       <Boton
