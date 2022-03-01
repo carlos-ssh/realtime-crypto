@@ -30,7 +30,7 @@ const useCriptomoneda = (label, stateInicial, opciones) => {
       <Select
         onChange={e => actualizarState(e.target.value)}
       >
-        <option value="">-- Selecciona --</option>
+        <option>-- Selecciona --</option>
         { opciones.map(opcion => (
           <option key={opcion.CoinInfo.Id} value={opcion.CoinInfo.Name}>{opcion.CoinInfo.FullName}</option>
         ))}
