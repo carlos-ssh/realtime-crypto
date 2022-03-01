@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Formulario from './components/Formulario';
 import imagen from './assets/images/img1.png';
@@ -37,6 +37,16 @@ const Heading = styled.h1`
 `;
 
 function App() {
+
+  const [moneda, guardarMoneda] = useState('');
+  const [criptomoneda, guardarCriptomoneda] = useState('');
+
+  useEffect(() => {
+    // Evita la ejecucion del codigo si no hay una moneda
+    if (moneda === '') return;
+    
+  }, [moneda, criptomoneda]);
+
   return (
     <Contenedor>
       <div>
@@ -49,7 +59,10 @@ function App() {
         <Heading>
           Cotiza ya!
         </Heading>
-        <Formulario/>
+        <Formulario
+          guardarMoneda={guardarMoneda}
+          guardarCripto={guardarCriptomoneda}
+        />
       </div>
     </Contenedor>
   );
