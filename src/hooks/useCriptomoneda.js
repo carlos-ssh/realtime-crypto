@@ -20,25 +20,25 @@ const Select = Styled.select`
   font-size: 1.2rem;
 `;
 
-const useMoneda = (label, stateInicial, opciones) => {
+const useCriptomoneda = (label, stateInicial, opciones) => {
 
   const [state, actualizarState] = useState(stateInicial);
 
-  const Seleccionar = () =>(
+  const SelectCripto = () =>(
     <Fragment>
       <Label>{label}</Label>
       <Select
         onChange={e => actualizarState(e.target.value)}
       >
         <option value="">-- Selecciona --</option>
-        { opciones.map(opcion => (
+        {/* { opciones.map(opcion => (
           <option key={opcion.codigo} value={opcion.codigo}>{opcion.nombre}</option>
-        ))}
+        ))} */}
       </Select>
     </Fragment>
   );
 
-  return [ state, Seleccionar, actualizarState ];
+  return [ state, SelectCripto, actualizarState ];
 }
 
-export default useMoneda;
+export default useCriptomoneda;
