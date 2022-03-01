@@ -23,7 +23,7 @@ const Select = Styled.select`
 const useCriptomoneda = (label, stateInicial, opciones) => {
 
   const [state, actualizarState] = useState(stateInicial);
-
+  
   const SelectCripto = () =>(
     <Fragment>
       <Label>{label}</Label>
